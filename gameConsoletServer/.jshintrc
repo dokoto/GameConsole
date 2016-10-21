@@ -1,0 +1,18 @@
+{
+    "esversion": 6,
+    "globalstrict": true,
+    "globals": {
+        "require": true,
+        "window": true,
+        "console": true,
+        "module": true,
+        "APP": true,
+        "process": true,
+        "__dirname": true,
+        "$": true,
+        "jQuery": true,
+        "document": true,
+        "i18n": true,
+        "btoa": true
+    }
+}

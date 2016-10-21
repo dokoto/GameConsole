@@ -1,0 +1,15 @@
+{
+    "SYS": {
+        "DELETE": {
+            "SESSION": "Delete session",
+            "TOPIC": "Delete topic"
+        },
+        "TRANSFER": {
+            "OWNER": "Tansfer owner to another user"
+        },
+        "LIST": {
+            "GAMES": "List active games",
+            "USERS": "List users in a game"
+        }
+    }
+}

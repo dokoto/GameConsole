@@ -1,0 +1,14 @@
+{
+  "name": "gameconsoleserver",
+  "version": "1.0.0",
+  "description": "Game Console Server",
+  "main": "gameConsoleServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "websocket": "^1.0.23"
+  }
+}
