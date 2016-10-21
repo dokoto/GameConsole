@@ -50,10 +50,6 @@ class MgsHandler {
     }
 
     _SYS_LIST_USERS(args) {
-        if (this._connectionHandler.user.type !== 'owner') {
-            throw Error('User must be owner exec LIST USERS');
-        }
-
         let msg = {
             status: 'success',
             msg: 'OK',
@@ -67,7 +63,8 @@ class MgsHandler {
                 'nick': connection.user.nick,
                 'client': connection.user.id,
                 'type': connection.user.type,
-                'address': connection.user.address
+                'address': connection.user.address,
+                'score': connection.user.score
             });
         }
 
