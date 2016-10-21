@@ -1,6 +1,7 @@
 'use strict';
 
 const MsgHandler = require('./MsgHandler');
+const sprintf = require("sprintf-js").sprintf;
 
 class Trivial {
     constructor(options) {
@@ -18,16 +19,6 @@ class Trivial {
         return true;
     }
 
-    _onMessage(connection, message) {
-        if (message.type === 'utf8') {
-            console.log('[%d][%s] Received UTF8 Message: %s', Date.now(), this._name, message.utf8Data);
-            this._msgHandle.process(connection, message.utf8Data);            
-        } else if (message.type === 'binary') {
-            console.warn('[%d][%s] Received Binary Message of %s bytes', Date.now(), this._name, message.binaryData.length);
-            console.warn('[%d][%s] NO Binary response definided', Date.now(), this._name);
-        }
-    }
-
     help() {
         console.log('');
         console.log('');
@@ -39,24 +30,63 @@ class Trivial {
         console.log('--maxclients : ');
     }
 
+    _onMessage(connection, message) {
+        if (message.type === 'utf8') {
+            console.log('[%d][%s] Received UTF8 Message: %s', Date.now(), this._name, message.utf8Data);
+            this._msgHandler.process(connection, message.utf8Data);
+        } else if (message.type === 'binary') {
+            console.warn('[%d][%s] Received Binary Message of %s bytes', Date.now(), this._name, message.binaryData.length);
+            console.warn('[%d][%s] NO Binary response definided', Date.now(), this._name);
+        }
+    }
+
     _connectionManager(request, connection) {
+        let msg = {
+            status: 'success',
+            msg: 'OK',
+            data: []
+        };
         connection.user = {};
+        connection.user.nick = request.resource.substr(request.resource.indexOf('?')+1).split('=')[1];
+        connection.user.score = 0;
         connection.user.id = request.httpRequest.headers['sec-websocket-key'] + connection.remoteAddress;
         connection.user.address = connection.remoteAddress;
-        connection.user.context = request.resource;
+        connection.user.context = request.resource.substr(0, request.resource.indexOf('?'));
         if (this._clients && this._clients[connection.user.context]) {
-            if (this._clients[connection.user.context][connection.user.id]) {
-                console.warn('[%d][%s] User %s exist in %s NO JOINED!!', Date.now(), this._name, connection.remoteAddress, request.resource);
+            if (this._clients[connection.user.context].connection[connection.user.id]) {
+                msg.msg = sprintf('[%d][%s] User %s exist in %s NO JOINED!!', Date.now(), this._name, connection.user.nick, connection.user.context);
+                console.warn(msg.msg);
+                msg.status = 'warn';
+                connection.sendUTF(JSON.stringify(msg));
             } else {
-                console.log('[%d][%s] New user %s joined to %s', Date.now(), this._name, connection.remoteAddress, request.resource);
-                connection.user.type = 'user';
-                this._clients[connection.user.context][connection.user.id] = connection;
+                if (this._clients[connection.user.context].game.started) {
+                    msg.msg = sprintf('[%d][%s] Game %s has started no more user will be accepted', Date.now(), this._name);
+                    console.log(msg.msg);
+                    msg.status = 'warn';
+                    connection.sendUTF(JSON.stringify(msg));
+                } else {
+                    msg.msg = sprintf('[%d][%s] New user %s joined to %s', Date.now(), this._name, connection.user.nick, connection.user.context);
+                    console.log(msg.msg);
+                    connection.user.type = 'user';
+                    this._clients[connection.user.context].game.turns.push(connection.user.id);
+                    connection.user.position = this._clients[connection.user.context].game.turns.length - 1;
+                    this._clients[connection.user.context].connection[connection.user.id] = connection;
+                    this._msgHandler._sendBroadCastMsg(JSON.stringify(msg), connection);
+                }
             }
         } else {
-            console.log('[%d][%s] New topic [%s] created. User %s setted as owner ', Date.now(), this._name, request.resource, connection.remoteAddress);
+            msg.msg = sprintf('[%d][%s] New topic [%s] created. User %s setted as owner ', Date.now(), this._name, connection.user.context, connection.user.nick);
+            console.log(msg.msg);
             connection.user.type = 'owner';
             this._clients[connection.user.context] = {};
-            this._clients[connection.user.context][connection.user.id] = connection;
+            this._clients[connection.user.context].connection = {};
+            connection.user.position = 0;
+            this._clients[connection.user.context].connection[connection.user.id] = connection;
+            this._clients[connection.user.context].game = {};
+            this._clients[connection.user.context].game.started = false;
+            this._clients[connection.user.context].game.turns = [];
+            this._clients[connection.user.context].game.turns.push(connection.user.id);
+            connection.sendUTF(JSON.stringify(msg));
         }
     }
 

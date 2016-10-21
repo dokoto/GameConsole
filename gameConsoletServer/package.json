@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "sprintf-js": "^1.0.3",
     "websocket": "^1.0.23"
   }
 }

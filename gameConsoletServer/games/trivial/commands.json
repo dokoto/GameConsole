@@ -11,5 +11,10 @@
             "GAMES": "List active games",
             "USERS": "List users in a game"
         }
+    },
+    "GAME": {
+        "START": "Start game",
+        "SET_USER_NAME": "Set user name",
+        "RESPOND": "Respond question"
     }
 }

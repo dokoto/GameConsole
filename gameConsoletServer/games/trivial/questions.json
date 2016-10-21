@@ -1,0 +1,13 @@
+[{
+    "question": "Como se llaman los reyes magos",
+    "responses": [{
+        "text": "Paco, luis, Sobor",
+        "right": false
+    }, {
+        "text": "Melchor, gaspar y Paco el maletas",
+        "right": false
+    }, {
+        "text": "Melchor, Gaspar, Baltasar",
+        "right": true
+    }]
+}]
