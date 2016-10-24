@@ -84,6 +84,7 @@ class Trivial {
             this._clients[connection.user.context].connection[connection.user.id] = connection;
             this._clients[connection.user.context].game = {};
             this._clients[connection.user.context].game.started = false;
+            this._clients[connection.user.context].game.lastQuestion = 0;
             this._clients[connection.user.context].game.turns = [];
             this._clients[connection.user.context].game.turns.push(connection.user.id);
             connection.sendUTF(JSON.stringify(msg));

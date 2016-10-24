@@ -116,10 +116,10 @@ class MgsHandler {
             msg: 'OK',
             data: {
                 for: this._clients[this._connectionHandler.user.context].connection[this._clients[this._connectionHandler.user.context].game.turn].user.nick,
-                question: questions[0]
+                question: questions[this._clients[this._connectionHandler.user.context].game.lastQuestion]
             }
         };
-
+        this._clients[this._connectionHandler.user.context].game.lastQuestion++;
         this._sendBroadCastMsg(JSON.stringify(msg));
     }
 
@@ -149,14 +149,13 @@ class MgsHandler {
         if (questions[args.questionNumber].responses[args.response].right) {
             this._connectionHandler.user.score += 10;
             msg.data = {
-                nick: this._connectionHandler.user.id,
+                nick: this._connectionHandler.user.nick,
                 responseOk: true,
                 currentScore: this._connectionHandler.user.score
             };
         } else {
-            this._connectionHandler.user.score -= 10;
             msg.data = {
-                nick: this._connectionHandler.user.id,
+                nick: this._connectionHandler.user.nick,
                 responseOk: true,
                 currentScore: this._connectionHandler.user.score
             };
