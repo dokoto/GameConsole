@@ -1,13 +1,565 @@
 [{
-    "question": "Como se llaman los reyes magos",
-    "responses": [{
-        "text": "Paco, luis, Sobor",
-        "right": false
-    }, {
-        "text": "Melchor, gaspar y Paco el maletas",
-        "right": false
-    }, {
-        "text": "Melchor, Gaspar, Baltasar",
+    "question": "¿En qué deporte se usa tiza?.",
+    "response": [{
+        "text": "billard",
         "right": true
+    },{
+        "text": "gimnasia",
+        "right": false
+    },{
+        "text": "lucha libre",
+        "right": false
+    }]
+}, {
+    "question": "¿Qué instrumento musical tiene nombre y forma geométricos?",
+    "response": [{
+        "text": "triangulo",
+        "right": true
+    },{
+        "text": "circulo",
+        "right": false
+    },{
+        "text": "cuadrado",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuáles son las dos primeras palabras de la Biblia?",
+    "response": [{
+        "text": "''al principio''",
+        "right": true
+    },{
+        "text": "Miro y",
+        "right": false
+    },{
+        "text": "Cuando dios",
+        "right": false
+    }]
+}, {
+    "question": "¿Quién escribió \"El Diario de Ana Frank\"?",
+    "response": [{
+        "text": "ella misma",
+        "right": true
+    },{
+        "text": "Chimo Bayo",
+        "right": false
+    },{
+        "text": "J.K. Rowling",
+        "right": false
+    }]
+}, {
+    "question": "¿Cómo se llaman las crías de la mula?",
+    "response": [{
+        "text": "es esteril",
+        "right": true
+    },{
+        "text": "mulitas",
+        "right": false
+    },{
+        "text": "chochos",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuál es el limite de edad establecido para participar en los Juegos Olímpicos?",
+    "response": [{
+        "text": "ninguno.",
+        "right": true
+    },{
+        "text": "depende de la prueba.",
+        "right": false
+    },{
+        "text": "35",
+        "right": false
+    }]
+}, {
+    "question": "¿Qué isla del Caribe tiene nombre de flor?",
+    "response": [{
+        "text": "La isla Margarita.",
+        "right": true
+    },{
+        "text": "Isla rosas.",
+        "right": false
+    },{
+        "text": "Orquidea",
+        "right": false
+    }]
+}, {
+    "question": "¿Qué órgano segrega la hormona insulina?",
+    "response": [{
+        "text": "El páncreas.",
+        "right": true
+    },{
+        "text": "Vesicula.",
+        "right": false
+    },{
+        "text": "Higado.",
+        "right": false
+    }]
+}, {
+    "question": "¿Con qué nombre firmaba Pablo Picasso sus pinturas?",
+    "response": [{
+        "text": "Con Picasso.",
+        "right": true
+    },{
+        "text": "Seudonimo.",
+        "right": false
+    },{
+        "text": "Con P. Picasso.",
+        "right": false
+    }]
+}, {
+    "question": "¿En qué provincia española se halla la ciudad de Jabugo, famosa por sus exquisitos jamones?",
+    "response": [{
+        "text": "En Huelva",
+        "right": true
+    },{
+        "text": "Salamanca",
+        "right": false
+    },{
+        "text": "Avila",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuál es la residencia oficial más grande del mundo?",
+    "response": [{
+        "text": "El Vaticano.",
+        "right": true
+    },{
+        "text": "El palacio del sultanato de Brunei",
+        "right": false
+    },{
+        "text": "El buckingham palace",
+        "right": false
+    }]
+}, {
+    "question": "¿Qué lado de los libros suele tener los números pares?",
+    "response": [{
+        "text": "El izquierdo",
+        "right": true
+    },{
+        "text": "El derecho",
+        "right": false
+    },{
+        "text": "ninguno de los anteriores",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuál es el fruto del roble?",
+    "response": [{
+        "text": "La bellota.",
+        "right": true
+    },{
+        "text": "Fresa.",
+        "right": false
+    },{
+        "text": "Nuez.",
+        "right": false
+    }]
+}, {
+    "question": "¿Fue Felipe V de España hijo de Felipe IV?",
+    "response": [{
+        "text": "No.",
+        "right": true
+    },{
+        "text": "Si.",
+        "right": false
+    },{
+        "text": "Fue su primo.",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuál es la moneda de Suiza?",
+    "response": [{
+        "text": "El franco suizo.",
+        "right": true
+    },{
+        "text": "Euro",
+        "right": false
+    },{
+        "text": "Dolar",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuál de los cinco sentidos se desarrolla primero?",
+    "response": [{
+        "text": "El olfato.",
+        "right": true
+    },{
+        "text": "El oido.",
+        "right": false
+    },{
+        "text": "El tacto.",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuántas pirámides hay en Egipto: 100, 1.000, o 10.000?",
+    "response": [{
+        "text": "Hay 10.000",
+        "right": true
+    },{
+        "text": "1.000",
+        "right": false
+    },{
+        "text": "hay 100 ",
+        "right": false
+    }]
+}, {
+    "question": "¿Es la araña un insecto?",
+    "response": [{
+        "text": "No.",
+        "right": true
+    },{
+        "text": "Si.",
+        "right": false
+    },{
+        "text": "Es un crustaceo",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuál es el único mamífero con cuatro rodillas?",
+    "response": [{
+        "text": "El elefante.",
+        "right": true
+    },{
+        "text": "Caballo.",
+        "right": false
+    },{
+        "text": "El rinoceronte.",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuántos jugadores se pueden sustituir en un partido de fútbol amistoso?",
+    "response": [{
+        "text": "Generalmente los acordados por los dos equipos.",
+        "right": true
+    },{
+        "text": "5",
+        "right": false
+    },{
+        "text": "Depende de la liga",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuál es (en extensión) el quinto país más grande del mundo?",
+    "response": [{
+        "text": "Brasil.",
+        "right": true
+    },{
+        "text": "Rusia",
+        "right": false
+    },{
+        "text": "U.S.A.",
+        "right": false
+    }]
+}, {
+    "question": "¿De qué color es la pelota de hockey sobre césped?",
+    "response": [{
+        "text": "Blanca.",
+        "right": true
+    },{
+        "text": "Amarilla.",
+        "right": false
+    },{
+        "text": "Es azul.",
+        "right": false
+    }]
+}, {
+    "question": "¿En qué árbol crecen los dátiles?",
+    "response": [{
+        "text": "En la palmera.",
+        "right": true
+    },{
+        "text": "Palma de la jalea.",
+        "right": false
+    },{
+        "text": "Palmera azul.",
+        "right": false
+    }]
+}, {
+    "question": "¿Qué tienen las ranas en la boca que no tienen los sapos?",
+    "response": [{
+        "text": "Dientes.",
+        "right": true
+    },{
+        "text": "Lengua.",
+        "right": false
+    },{
+        "text": "Bigote",
+        "right": false
+    }]
+}, {
+    "question": "¿Con qué título eclesiástico se conoce vulgarmente un hematoma?",
+    "response": [{
+        "text": "Cardenal.",
+        "right": true
+    },{
+        "text": "Con el de cura Obispo.",
+        "right": false
+    },{
+        "text": "Cura.",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuál es la causa de cada muerte humana?",
+    "response": [{
+        "text": "Falta de circulación sanguínea en el cerebro.",
+        "right": true
+    },{
+        "text": "Oxidacion de las celulas",
+        "right": false
+    },{
+        "text": "El aburrimiento",
+        "right": false
+    }]
+}, {
+    "question": "¿Pueden nadar los gorilas?",
+    "response": [{
+        "text": "No",
+        "right": true
+    },{
+        "text": "Si, son grandes nadadores",
+        "right": false
+    },{
+        "text": "No normalmente, pero existen algunos casos documentados",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuál es el primer día de la Cuaresma?",
+    "response": [{
+        "text": "Miércoles de Ceniza.",
+        "right": true
+    },{
+        "text": "Jueves santo.",
+        "right": false
+    },{
+        "text": "Viernes de Ceniza.",
+        "right": false
+    }]
+}, {
+    "question": "¿Qué hace una persona alrededor de 295 veces durante la comida?",
+    "response": [{
+        "text": "Tragar.",
+        "right": true
+    },{
+        "text": "Salivar.",
+        "right": false
+    },{
+        "text": "Respirar.",
+        "right": false
+    }]
+}, {
+    "question": "¿Qué diferencia existe entre un asno y un burro?",
+    "response": [{
+        "text": "Ninguna",
+        "right": true
+    },{
+        "text": "Son cruces de expecies diferentes",
+        "right": false
+    },{
+        "text": "Un Asno es el cruce entre caballo y burro",
+        "right": false
+    }]
+}, {
+    "question": "¿Cómo se dice vino en italiano?",
+    "response": [{
+        "text": "Vino.",
+        "right": true
+    },{
+        "text": "wine.",
+        "right": false
+    },{
+        "text": "Piu Liquido.",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuál es el ojo defectuoso de Popeye?",
+    "response": [{
+        "text": "El derecho.",
+        "right": true
+    },{
+        "text": "El izquierdo.",
+        "right": false
+    },{
+        "text": "Ninguno.",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuántas personas se refugiaron en el Arca de Noé?",
+    "response": [{
+        "text": "Ocho",
+        "right": true
+    },{
+        "text": "10",
+        "right": false
+    },{
+        "text": "Seis",
+        "right": false
+    }]
+}, {
+    "question": "¿Qué pie puso primero Neil Amstrong sobre la Luna?",
+    "response": [{
+        "text": "El izquierdo",
+        "right": true
+    },{
+        "text": "El derecho",
+        "right": false
+    },{
+        "text": "Ambos pies a la vez, porque dio un salto desde la escalera",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuál es el segundo idioma más hablado del mundo?",
+    "response": [{
+        "text": "El inglés",
+        "right": true
+    },{
+        "text": "El Castellano",
+        "right": false
+    },{
+        "text": "El Chino",
+        "right": false
+    }]
+}, {
+    "question": "¿Qué representan las siglas P.A.M.D.B.?",
+    "response": [{
+        "text": "Patronato de Apuestas Mutuas Deportivo Benéficas.",
+        "right": true
+    },{
+        "text": "Plant Associated and Environmental Microbes Database.",
+        "right": false
+    },{
+        "text": "Patronato de Apuestas Mutuas Divulgativo Beneries.",
+        "right": false
+    }]
+}, {
+    "question": "¿Qué es más valioso un brillante o un diamante?",
+    "response": [{
+        "text": "Un brillante.",
+        "right": true
+    },{
+        "text": "El diamante es la priedra preciosa mas valiosa.",
+        "right": false
+    },{
+        "text": "Depende del estado del mercado.",
+        "right": false
+    }]
+}, {
+    "question": "¿Qué rasgo facial no tiene la Mona Lisa?",
+    "response": [{
+        "text": "Cejas",
+        "right": true
+    },{
+        "text": "Bigote",
+        "right": false
+    },{
+        "text": "Hoyuelos.",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuál es el signo de puntuación más usado?",
+    "response": [{
+        "text": "La coma.",
+        "right": true
+    },{
+        "text": "Punto.",
+        "right": false
+    },{
+        "text": "Depende del idioma",
+        "right": false
+    }]
+}, {
+    "question": "¿Cómo se transmiten más rápidamente las ondas sonoras, a través del agua, del aire o el espacio?",
+    "response": [{
+        "text": "agua.",
+        "right": true
+    },{
+        "text": "Aire, tiene menos resitencia.",
+        "right": false
+    },{
+        "text": "Espacio.",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuál fue la primera ave domesticada?",
+    "response": [{
+        "text": "Oca.",
+        "right": true
+    },{
+        "text": "Pato.",
+        "right": false
+    },{
+        "text": "El papagallo de nueva guinea",
+        "right": false
+    }]
+}, {
+    "question": "¿Cómo se conoce vulgarmente el encéfalo?",
+    "response": [{
+        "text": "Sesos",
+        "right": true
+    },{
+        "text": "Bufalo",
+        "right": false
+    },{
+        "text": "La frente",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuáles son los elementos esenciales del acero?",
+    "response": [{
+        "text": "Hierro y carbono",
+        "right": true
+    },{
+        "text": "Hierro, carbono, y titanio",
+        "right": false
+    },{
+        "text": "Hierro y titanio",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuál es el único mamífero que no puede saltar?",
+    "response": [{
+        "text": "El elefante",
+        "right": true
+    },{
+        "text": "Kiwi",
+        "right": false
+    },{
+        "text": "El hipopotamo",
+        "right": false
+    }]
+}, {
+    "question": "¿Cuál es el dedo más sensible de la mano?",
+    "response": [{
+        "text": "El índice.",
+        "right": true
+    },{
+        "text": "El anular.",
+        "right": false
+    },{
+        "text": "El corazon.",
+        "right": false
+    }]
+}, {
+    "question": "¿Con qué dos colores suele tener problemas un daltónico?",
+    "response": [{
+        "text": "Rojo y verde.",
+        "right": true
+    },{
+        "text": "Verde y Amarillo.",
+        "right": false
+    },{
+        "text": "Rojo y Amarillo.",
+        "right": false
+    }]
+}, {
+    "question": "¿Qué es el membrillero, un árbol, un arbusto o una raiz?",
+    "response": [{
+        "text": "Un arbusto",
+        "right": true
+    },{
+        "text": "Arbol",
+        "right": false
+    },{
+        "text": "Una raiz",
+        "right": false
     }]
 }]
