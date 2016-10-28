@@ -10,6 +10,9 @@
         "LIST": {
             "GAMES": "List active games",
             "USERS": "List users in a game"
+        },
+        "GET": {
+            "SOURCES": "Get page sources from url"
         }
     }
 }

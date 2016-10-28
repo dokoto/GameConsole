@@ -1,17 +1,4 @@
 {
-    "SYS": {
-        "DELETE": {
-            "SESSION": "Delete session",
-            "TOPIC": "Delete topic"
-        },
-        "TRANSFER": {
-            "OWNER": "Tansfer owner to another user"
-        },
-        "LIST": {
-            "GAMES": "List active games",
-            "USERS": "List users in a game"
-        }
-    },
     "GAME": {
         "START": "Start game",
         "SET_USER_NAME": "Set user name",

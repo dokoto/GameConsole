@@ -12,6 +12,7 @@
   "author": "manuel.alfaro.sierra@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "request": "^2.76.0",
     "sprintf-js": "^1.0.3",
     "websocket": "^1.0.23"
   }
