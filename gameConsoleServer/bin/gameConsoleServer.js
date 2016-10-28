@@ -43,7 +43,7 @@ class ConsoleGameServer {
     }
     _resolveGame() {
         try {
-            let Game = require(path.join(process.cwd(), '/lib/games', this._params.gameName, '/game'));
+            let Game = require(path.join('../lib/games', this._params.gameName, '/game'));
             this._game = new Game({
                 params: this._params.gameParams
             });
