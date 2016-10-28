@@ -1,7 +1,9 @@
+#!/usr/bin/env node
+
 'use strict';
 
 const WebSocketServer = require('websocket').server;
-const HttpServer = require('./serverLogic/httpServer');
+const HttpServer = require('../lib/serverLogic/httpServer');
 const path = require('path');
 
 class ConsoleGameServer {
@@ -41,7 +43,7 @@ class ConsoleGameServer {
     }
     _resolveGame() {
         try {
-            let Game = require(path.join(process.cwd(), '/games', this._params.gameName, '/game'));
+            let Game = require(path.join(process.cwd(), '/lib/games', this._params.gameName, '/game'));
             this._game = new Game({
                 params: this._params.gameParams
             });

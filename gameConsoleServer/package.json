@@ -2,11 +2,14 @@
   "name": "gameconsoleserver",
   "version": "1.0.0",
   "description": "Game Console Server",
-  "main": "gameConsoleServer.js",
+  "main": "./bin/gameConsoleServer.js",
+  "bin": {
+    "gcs": "./bin/gameConsoleServer.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "manuel.alfaro.sierra@gmail.com",
   "license": "ISC",
   "dependencies": {
     "sprintf-js": "^1.0.3",
