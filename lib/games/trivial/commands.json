@@ -1,7 +1,9 @@
 {
     "GAME": {
-        "START": "Start game",
-        "SET_USER_NAME": "Set user name",
-        "RESPOND": "Respond question"
+        "START": "{'command': ['GAME', 'START'], 'arguments':{'room': '782'}",
+        "CREATE" : "{'command': ['GAME', 'CREATE'], 'arguments':{'room': '782'}",
+        "JOIN":  "{'command': ['GAME', 'JOIN'], 'arguments':{'room': '782'}",
+        "RESPOND": "{'command': ['GAME', 'RESPOND'], 'arguments':{'questionNumber': 0, 'response: 2'}",
+        "SET_USER_NAME": "{'command': ['GAME', 'SET_USER_NAME'], 'arguments':{'user': 'paco'}"
     }
 }

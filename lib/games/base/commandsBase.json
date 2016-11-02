@@ -8,11 +8,12 @@
             "OWNER": "Tansfer owner to another user"
         },
         "LIST": {
-            "GAMES": "List active games",
-            "USERS": "List users in a game"
+            "GAMES": "{'command': ['SYS', 'LIST', 'GAMES']}",
+            "ROOMS": "{'command': ['SYS', 'LIST', 'ROOMS']}",
+            "USERS": "{'command': ['SYS', 'LIST', 'USERS']}"
         },
         "GET": {
-            "SOURCES": "Get page sources from url"
+            "SOURCES": "{'command': ['SYS', 'GET', 'SOURCES'], 'arguments':{'user': 'http://www.google.es'}}"
         }
     }
 }
