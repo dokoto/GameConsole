@@ -1,0 +1,7 @@
+- Conexion sin logado : NO
+- Logado y verificacion de que no exista a nivel juego
+- Listado de Partidas o salas
+- Crear partida
+- Sala de espera
+- Lanzar evento cuando se llene la sala
+- Indicar el numero maximo de personas al crear la sala
