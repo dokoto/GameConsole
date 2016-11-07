@@ -13,6 +13,7 @@
         "jQuery": true,
         "document": true,
         "i18n": true,
-        "btoa": true
+        "btoa": true,
+        "describe": true
     }
 }
