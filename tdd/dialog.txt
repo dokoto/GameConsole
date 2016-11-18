@@ -1,0 +1,3 @@
+/connect ws://10.80.80.50:8003/trivial?nick=dokoto chat
+/send {'command': ['GAME', 'CREATE'], 'arguments':{'room': '782'}
+/send {'command': ['GAME', 'JOIN'], 'arguments':{'room': '782'}
