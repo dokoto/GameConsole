@@ -10,7 +10,7 @@ let Messages = require('./messages');
 
 const options = {
     numOfUsers: 5,
-    wsUrl: 'ws://10.80.80.50:8003/trivial',
+    wsUrl: 'ws://192.168.77.94:8003/trivial',
     protocol: 'chat',
     room: '101'
 };
@@ -39,8 +39,8 @@ class Clients extends EventEmitter {
             console.log('[TESTER][SUCCESS] %s', event);
             this.emit(event);
         } catch (error) {
-            console.log('[TESTER][ASSERT-ERROR][RESPONSE] %s', JSON.stringify(response.utf8Data));
-            console.log('[TESTER][ASSERT-ERROR][EXPECTED] %s', JSON.stringify(responseExpected));
+            console.log('[TESTER][ASSERT-ERROR][RESPONSE] %s', JSON.stringify(JSON.parse(response.utf8Data), null, '\t'));
+            console.log('[TESTER][ASSERT-ERROR][EXPECTED] %s', JSON.stringify(responseExpected, null, '\t'));
         }
     }
 
