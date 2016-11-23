@@ -33,21 +33,22 @@ class Clients extends EventEmitter {
         console.log('[TESTER][ERROR] %s', error.toString());
     }
 
-    assertMessage(responseExpected, event, client, response) {
+    assertMessage(responseExpected, ev, checkcb, client, response) {
         try {
-            assert.deepEqual(JSON.parse(response.utf8Data), responseExpected);
-            console.log('[TESTER][SUCCESS] %s', event);
-            this.emit(event);
+            checkcb(JSON.parse(response.utf8Data), responseExpected);
+            //assert.deepEqual(JSON.parse(response.utf8Data), responseExpected);
+            console.log('[TESTER][MESSAGE][OK] %s', ev);
+            this.emit(ev);
         } catch (error) {
-            console.log('[TESTER][ASSERT-ERROR][RESPONSE] %s', JSON.stringify(JSON.parse(response.utf8Data), null, '\t'));
-            console.log('[TESTER][ASSERT-ERROR][EXPECTED] %s', JSON.stringify(responseExpected, null, '\t'));
+            console.log('[TESTER][MESSAGE][RESPONSE][ERROR] %s', JSON.stringify(JSON.parse(response.utf8Data), null, '\t'));
+            console.log('[TESTER][MESSAGE][EXPECTED][ERROR] %s', JSON.stringify(responseExpected, null, '\t'));
         }
     }
 
     connect(index) {
         index = (index !== undefined) ? index + 1 : 0;
         if (index > 0) {
-            console.log('[TESTER][CONNECT] "%s" connected OK', this.clients[index - 1].name);
+            console.log('[TESTER][CONNECT][OK] "%s" connected', this.clients[index - 1].name);
         }
         if (index < this.clients.length) {
             this.clients[index].once('connected', this.connect.bind(this, index));
@@ -60,22 +61,42 @@ class Clients extends EventEmitter {
     }
 
     create() {
+        let checkcb = (response, responseExpected) => {
+            if (response.status !== responseExpected.status || response.msg !== responseExpected.msg) {
+                throw Error('status or msg error');
+            }
+        };
         Messages.sent.create.arguments.room = this.options.room;
         this.clients[0].connection.sendUTF(JSON.stringify(Messages.sent.create));
-        this.clients[0].once('message', this.assertMessage.bind(this, Messages.expected.standard, 'game:created'));
+        this.clients[0].once('message', this.assertMessage.bind(this, Messages.expected.standard, 'game:created', checkcb));
     }
 
+
+
     start() {
+        let checkcb = (response, responseExpected) => {
+            if (response.status !== responseExpected.status || response.msg !== responseExpected.msg) {
+                throw Error('status or msg error');
+            }
+            if (!response.question.question || !response.question.responses) {
+                throw Error('No question or responses');
+            }
+        };
         Messages.sent.start.arguments.room = this.options.room;
         this.clients[0].connection.sendUTF(JSON.stringify(Messages.sent.start));
-        this.clients[0].once('message', this.assertMessage.bind(this, Messages.expected.standard, 'game:started'));
+        this.clients[0].once('message', this.assertMessage.bind(this, Messages.expected.standard, 'game:started', checkcb));
     }
 
     join(index) {
+        let checkcb = (response, responseExpected) => {
+            if (response.status !== responseExpected.status || response.msg !== responseExpected.msg) {
+                throw Error('status or msg error');
+            }
+        };
         Messages.sent.join.arguments.room = this.options.room;
         index = (index !== undefined) ? index + 1 : 1;
         if (index > 1) {
-            console.log('[TESTER][CONNECT] "%s" joined OK', this.clients[index - 1].name);
+            console.log('[TESTER][CONNECT][OK] "%s" joined', this.clients[index - 1].name);
         }
         if (index < this.clients.length) {
             this.clients[index].connection.sendUTF(JSON.stringify(Messages.sent.join));
