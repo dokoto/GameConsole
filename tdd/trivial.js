@@ -10,7 +10,7 @@ let Messages = require('./messages');
 
 const options = {
     numOfUsers: 5,
-    wsUrl: 'ws://192.168.77.94:8003/trivial',
+    wsUrl: 'ws://10.80.80.50:8003/trivial',
     protocol: 'chat',
     room: '101'
 };
@@ -88,6 +88,7 @@ class Clients extends EventEmitter {
 }
 
 try {
+    debugger ;
     let tester = new Clients(options);
     tester.factory();
     tester.connect();
